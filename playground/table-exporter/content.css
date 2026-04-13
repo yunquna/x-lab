@@ -1,0 +1,66 @@
+/** table-exporter/content.css */
+/* 遵循 KISS 原则，使用语义化和具有特异性的类名防止污染宿主网页，保持简洁 */
+
+.yq-table-toolbar-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px; /* 让工具栏贴着表格上方 */
+  width: 100%;
+}
+
+.yq-table-toolbar-group {
+  display: inline-flex;
+  gap: 8px;
+  background-color: #ffffff;
+  padding: 6px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.yq-table-toolbar-group:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.yq-table-btn {
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+  line-height: 1.5;
+}
+
+.yq-table-btn-export {
+  background-color: #1677ff;
+  color: white;
+}
+
+.yq-table-btn-export:hover {
+  background-color: #4096ff;
+}
+
+.yq-table-btn-export:active {
+  background-color: #0958d9;
+}
+
+.yq-table-btn-close {
+  background-color: #f5f5f5;
+  color: #555;
+  border: 1px solid #d9d9d9;
+  padding: 3px 11px; /* 由于 border 修正视觉体积 */
+}
+
+.yq-table-btn-close:hover {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.yq-table-btn-close:active {
+  background-color: #d9d9d9;
+}

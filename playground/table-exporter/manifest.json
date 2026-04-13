@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Web Table Exporter",
+  "version": "1.0",
+  "description": "自动在页面表格上方添加工具栏，支持将表格数据导出为带当天日期的 CSV 文件。",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

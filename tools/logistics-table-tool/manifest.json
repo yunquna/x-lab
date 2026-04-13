@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "物流数据自动叉车 (Demo)",
+  "version": "1.0",
+  "description": "物流人的第一个 AI 制作插件：网页表格一键导出 CSV",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "x-lab",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "YQNUS-X-Lab 实验室 (Tutorials, Tools, Playground)",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.2.2"
+  }
+}
