@@ -11,12 +11,14 @@
 (function() {
     'use script';
 
-    // 延时等待页面框架加载，或者使用 DOMContentLoaded
-    window.addEventListener('load', () => {
+    // 使用轮询方式等待 SPA 框架 (Vue) 渲染出我们需要的元素
+    const tmTimer = setInterval(() => {
         const targetBtn = document.getElementById('tm-test-target');
         const statusArea = document.getElementById('tm-status-area');
         
         if (targetBtn && statusArea) {
+            clearInterval(tmTimer); // 找到元素后停止轮询
+
             // 修改页面的 UI 元素证明脚本正在工作
             statusArea.innerHTML = `
                 <div style="padding: 15px; margin: 15px 0; background-color: #e6f7ff; border-left: 4px solid #1890ff; color: #0050b3; border-radius: 4px;">
@@ -36,6 +38,9 @@
             
             console.log("X-Lab Demo Tampermonkey 脚本运行完毕。");
         }
-    });
+    }, 500);
+
+    // 10秒后放弃轮询，防止死循环
+    setTimeout(() => clearInterval(tmTimer), 10000);
 
 })();

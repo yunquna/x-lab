@@ -7,6 +7,9 @@
 
 > [!CAUTION]  
 > 必须确保您的浏览器已经安装了 [Tampermonkey 扩展程序](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 后，方可进行这一步。
+> 
+> **⚠️ 关键安全设定（新版重点）：**
+> 由于新内核安全策略提升，您必须进入扩展详情页 (`chrome://extensions`)，**确保勾选打开了「允许运行用户脚本」选项**！不然所有本地测试或者未经 Chrome 商店审查的内部脚本都将被强制阻断拦截，无法生效！
 
 您不仅可以点击安装我们内置的例子：**[👉 点击直接安装内置 Demo 脚本](/scripts/hello-world.user.js)** 
 
@@ -18,7 +21,7 @@ import { ref } from 'vue'
 const tmCode = ref(`// ==UserScript==
 // @name         自定义内测脚本试玩 (Playground)
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  在编辑器中动态安装体验
 // @author       YQNUS-X-Lab
 // @include      *tampermonkey-test*
@@ -27,16 +30,23 @@ const tmCode = ref(`// ==UserScript==
 
 (function() {
     'use strict';
-    // 我们在这里加一个明显的对话框
-    alert('从编辑器自定义的脚本执行成功拉！😎');
-    
-    // 如果你有更多的业务逻辑，可以大胆修改这部分进行测试
-    const btn = document.getElementById('tm-test-target');
-    if(btn) {
-        btn.textContent = '被自定义脚本挟持成功~';
-        btn.style.backgroundColor = '#faad14';
-        btn.style.borderColor = '#faad14';
-    }
+    // VitePress 是一个基于 Vue 的单页面应用 (SPA)。
+    // 为了防止脚本运行太早导致找不到 DOM 元素，我们采用轮询等待。
+    const tmTimer = setInterval(() => {
+        const btn = document.getElementById('tm-test-target');
+        if(btn) {
+            clearInterval(tmTimer);
+            // 我们在这里加一个明显的对话框
+            alert('从编辑器自定义的脚本执行成功拉！😎');
+            
+            btn.textContent = '被自定义脚本挟持成功~';
+            btn.style.backgroundColor = '#faad14';
+            btn.style.borderColor = '#faad14';
+            btn.style.color = '#fff';
+        }
+    }, 500);
+
+    setTimeout(() => clearInterval(tmTimer), 10000);
 })();`)
 
 function installTM() {
