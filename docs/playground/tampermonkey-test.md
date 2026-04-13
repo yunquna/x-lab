@@ -60,14 +60,16 @@ function installTM() {
 </script>
 
 <div style="margin: 15px 0;">
-  <textarea v-model="tmCode" style="width:100%; height:200px; font-family:monospace; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-  <br>
-  <button 
-    @click="installTM" 
-    style="background-color:#10b981; color:white; padding:10px 20px; font-weight: bold; border:none; border-radius:4px; cursor:pointer; margin-top: 10px;"
-  >
-    📋 复制我的特制代码（去油猴手动添加）
-  </button>
+  <ClientOnly>
+    <textarea v-model="tmCode" style="width:100%; height:200px; font-family:monospace; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    <br>
+    <button 
+      @click="installTM" 
+      style="background-color:#10b981; color:white; padding:10px 20px; font-weight: bold; border:none; border-radius:4px; cursor:pointer; margin-top: 10px;"
+    >
+      📋 复制我的特制代码（去油猴手动添加）
+    </button>
+  </ClientOnly>
 </div>
 
 *无论是直接安装还是编辑器安装，完成后，请主动刷新当前这个页面，观察是否生效。*
