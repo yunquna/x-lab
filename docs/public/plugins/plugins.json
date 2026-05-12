@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "plugins": [
+    {
+      "id": "logistics-forklift",
+      "name": "物流数据自动叉车",
+      "description": "网页表格一键导出 CSV，适用于物流配载数据整理。自动扫描页面中的表格，在每个表格上方添加「导出 CSV」按钮。",
+      "category": "logistics",
+      "status": "stable",
+      "type": "chrome-extension",
+      "version": "1.0.0",
+      "author": "YQNUS-X-Lab",
+      "updated": "2026-05-12",
+      "download_url": "/plugins/logistics-forklift/v1.0.0.zip",
+      "icon": "/plugins/logistics-forklift/icon.png",
+      "tags": ["物流", "表格", "CSV", "导出"],
+      "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
+    },
+    {
+      "id": "table-exporter",
+      "name": "Table Exporter（网页表格导出器）",
+      "description": "浏览器插件：识别网页中的表格数据，支持一键导出为 CSV 格式。处于内测阶段的概念验证项目。",
+      "category": "export",
+      "status": "beta",
+      "type": "chrome-extension",
+      "version": "0.1.0",
+      "author": "YQNUS-X-Lab",
+      "updated": "2026-05-12",
+      "download_url": "/plugins/table-exporter/v0.1.0.zip",
+      "icon": "/plugins/table-exporter/icon.png",
+      "tags": ["表格", "导出", "CSV", "内测"],
+      "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
+    },
+    {
+      "id": "wms-batch-extractor",
+      "name": "WMS 批次批量提取器",
+      "description": "在 WMS 库存页面上批量提取每个批次编码对应的弹窗全部信息（托盘ID、托重等字段），支持自动翻页和 CSV 导出。",
+      "category": "logistics",
+      "status": "stable",
+      "type": "chrome-extension",
+      "version": "1.0.0",
+      "author": "axiong",
+      "updated": "2026-05-12",
+      "download_url": "/plugins/wms-batch-extractor/v1.0.0.zip",
+      "icon": "/plugins/wms-batch-extractor/icon.png",
+      "preview": "/plugins/wms-batch-extractor/preview.png",
+      "tags": ["WMS", "批次", "导出", "批量"],
+      "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
+    },
+    {
+      "id": "hello-world-demo",
+      "name": "Hello X-Lab 演示脚本",
+      "description": "Tampermonkey 入门脚本，安装后在油猴靶场页面显示欢迎横幅并改造按钮样式，适合新手体验脚本效果。",
+      "category": "demo",
+      "status": "stable",
+      "type": "tampermonkey",
+      "version": "1.0.0",
+      "author": "YQNUS-X-Lab",
+      "updated": "2026-05-12",
+      "download_url": "/scripts/hello-world.user.js",
+      "icon": "",
+      "tags": ["教程", "演示", "Tampermonkey"],
+      "install_guide": "点击「一键安装」按钮 → 浏览器弹出 Tampermonkey 安装页面 → 点击「安装」即可"
+    }
+  ]
+}

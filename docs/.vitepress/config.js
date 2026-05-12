@@ -9,11 +9,20 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '教程 (Tutorials)', link: '/tutorials/tech_prompt' },
+      { text: '🔌 插件市场', link: '/market/' },
       { text: '工具 (Tools)', link: '/tools/' },
       { text: '试验场 (Playground)', link: '/playground/' }
     ],
 
     sidebar: {
+      '/market/': [
+        {
+          text: '插件市场',
+          items: [
+            { text: '🔌 市场首页', link: '/market/' }
+          ]
+        }
+      ],
       '/tutorials/': [
         {
           text: '教程模块',
