@@ -11,8 +11,8 @@
       "version": "1.0.0",
       "author": "YQNUS-X-Lab",
       "updated": "2026-05-12",
-      "download_url": "/x-lab/plugins/logistics-forklift/v1.0.0.zip",
-      "icon": "/x-lab/plugins/logistics-forklift/icon.png",
+      "download_url": "/plugins/logistics-forklift/v1.0.0.zip",
+      "icon": "/plugins/logistics-forklift/icon.png",
       "tags": ["物流", "表格", "CSV", "导出"],
       "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
     },
@@ -26,8 +26,8 @@
       "version": "0.1.0",
       "author": "YQNUS-X-Lab",
       "updated": "2026-05-12",
-      "download_url": "/x-lab/plugins/table-exporter/v0.1.0.zip",
-      "icon": "/x-lab/plugins/table-exporter/icon.png",
+      "download_url": "/plugins/table-exporter/v0.1.0.zip",
+      "icon": "/plugins/table-exporter/icon.png",
       "tags": ["表格", "导出", "CSV", "内测"],
       "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
     },
@@ -41,9 +41,9 @@
       "version": "1.0.0",
       "author": "axiong",
       "updated": "2026-05-12",
-      "download_url": "/x-lab/plugins/wms-batch-extractor/v1.0.0.zip",
-      "icon": "/x-lab/plugins/wms-batch-extractor/icon.png",
-      "preview": "/x-lab/plugins/wms-batch-extractor/preview.png",
+      "download_url": "/plugins/wms-batch-extractor/v1.0.0.zip",
+      "icon": "/plugins/wms-batch-extractor/icon.png",
+      "preview": "/plugins/wms-batch-extractor/preview.png",
       "tags": ["WMS", "批次", "导出", "批量"],
       "install_guide": "下载 ZIP 后解压 → 打开 Chrome 浏览器 → 地址栏输入 chrome://extensions → 开启右上角「开发者模式」 → 点击左上角「加载已解压的扩展程序」 → 选择解压后的文件夹"
     },
@@ -57,7 +57,7 @@
       "version": "1.0.0",
       "author": "YQNUS-X-Lab",
       "updated": "2026-05-12",
-      "download_url": "/x-lab/scripts/hello-world.user.js",
+      "download_url": "/scripts/hello-world.user.js",
       "icon": "",
       "tags": ["教程", "演示", "Tampermonkey"],
       "install_guide": "点击「一键安装」按钮 → 浏览器弹出 Tampermonkey 安装页面 → 点击「安装」即可"

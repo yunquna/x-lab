@@ -145,7 +145,7 @@
           <ol>
             <li>在 <code>docs/public/plugins/</code> 下新建一个文件夹（如 <code>my-plugin/</code>）</li>
             <li>放入 ZIP 压缩包和图标文件（可选），如有截图请命名为 <code>preview.png</code></li>
-            <li>编辑 <code>docs/public/plugins/plugins.json</code>，添加一条插件记录，预览图字段为 <code>"preview": "/plugins/插件名/preview.png"</code></li>
+            <li>编辑 <code>docs/public/plugins/plugins.json</code>，添加一条插件记录，资源路径写成 <code>/plugins/插件名/文件名</code> 这种站点根路径，不要手动加 <code>/x-lab/</code></li>
           </ol>
           <p>提交到 GitHub 的 <code>main</code> 分支后，CI/CD 会自动构建部署，约 2 分钟内上线。</p>
         </div>
@@ -156,12 +156,16 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useData } from 'vitepress'
+
+import { normalizePluginAssets, resolveWithBase } from './pluginMarketPaths'
 
 const plugins = ref([])
 const loading = ref(true)
 const activeFilter = ref('all')
 const searchQuery = ref('')
 const previewPlugin = ref(null)
+const { site } = useData()
 
 const filters = [
   { key: 'all', label: '📋 全部' },
@@ -219,9 +223,9 @@ const filteredPlugins = computed(() => {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/x-lab/plugins/plugins.json')
+    const res = await fetch(resolveWithBase(site.value.base, '/plugins/plugins.json'))
     const data = await res.json()
-    plugins.value = data.plugins
+    plugins.value = data.plugins.map(plugin => normalizePluginAssets(plugin, site.value.base))
   } catch (err) {
     console.error('加载插件列表失败:', err)
   } finally {
